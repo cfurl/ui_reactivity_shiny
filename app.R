@@ -63,7 +63,7 @@ server <- function(input, output) {
   # This block observes the event of cyl_filter() and updates the choices of vehicle names based on cylinders
   observeEvent(cyl_filter(), {
     car_choices<-unique(cyl_filter()$car_type)
-    updateCheckboxGroupInput(inputId = "names", choices = car_choices, selected=car_choices)
+    updateCheckboxGroupInput(inputId = "names", choices = car_choices, selected=car_choices[1])
   })
   
   # Not 100% sure about this step, but it creates the reactive tibble I map my plots to
